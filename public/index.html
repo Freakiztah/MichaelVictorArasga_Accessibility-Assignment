@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>INM320 Assignment 5: Accessibility</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@3.0.0/reset.min.css" />
+    <link rel='stylesheet'
+        href='//fonts.googleapis.com/css?family=Quando:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic%7CJosefin+Sans:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic'
+        type='text/css' media='all' />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+
+    <script src="https://kit.fontawesome.com/2216cb6a92.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <!-- Updated Menu with labels and with ARIA -->
+                    <li class="menu-item-has-children" role="none">
+                        <a href="#" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-label="Features">Features</a>
+                        <ul role="menu" aria-label="Features Dropdown menu">
+                            <li role="none">
+                                <a href="" role="menuitem" aria-label="Standard Post">Standard Post</a>
+                            </li>
+                            <li role="none">
+                                <a href="" role="menuitem" aria-label="Video Thumbnail Post">Video Thumbnail Post</a>
+                            </li>
+                            <li role="none">
+                                <a href="" role="menuitem" aria-label="Gallery Post">Gallery Post</a>
+                            </li>
+                            <li role="none">
+                                <a href="" role="menuitem" aria-label="Video Post">Video Post</a>
+                            </li>
+                            <li role="none">
+                                <a href="" role="menuitem" aria-label="Audio Post">Audio Post</a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li class="current-menu-item"><a href="">Guides</a></li>
+                    <li role="none">
+                        <a href="" role="menuitem" aria-label="Trends">Trends</a>
+                    </li>
+                    <li role="none">
+                        <a href="" role="menuitem" aria-label="About Me">About Me</a>
+                    </li>
+                    <li role="none">
+                        <a href="" role="menuitem" aria-label="Contact Me">Contact Me</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="top-logo">
+                <!-- alt attributes for site or main logo -->
+                <a href="/"><img src="/assets/images/site-logo.png" alt="Dreamla Black Site logo" /></a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <article>
+                <div class="image-part">
+                    <a href="">
+                        <!-- alt attributes for hero image -->
+                        <img width="960" height="750" src="/assets/images/top-places-you-should-visit-right-now.jpg"
+                            alt="Beautiful destinations you should visit" />
+                    </a>
+                </div>
+
+                <div class="content-part">
+                    <!-- Post Header with ARIA -->
+                    <div class="post-header" role="article" aria-labelledby="post-title-1">
+                        <h3 class="post-title" id="post-title-1">
+                            <a href="" role="link" aria-label="Read about the top places you should visit right now">
+                                Top Places You Should Visit Right Now
+                            </a>
+                        </h3>
+                    </div>
+
+                    <div class="post-list-entry">
+                        <!-- Subheading with ARIA -->
+                        <p role="note" aria-label="Contact information prompt">
+                            Contact us to learn more!
+                        </p>
+                        <form action="/" method="post">
+                            <label for="fullname">Name</label>
+                            <input type="text" name="fullname" id="fullname" required />
+
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email" required />
+
+                            <!-- Added form Elements - Country Dropdown Field -->
+                            <label for="country">Country</label>
+                            <select name="country" id="country" required>
+                                <option value="">Select your country</option>
+                                <option value="canada">Canada</option>
+                                <option value="usa">USA</option>
+                                <option value="philippines">Philippines</option>
+                                <option value="others">Others</option>
+                            </select>
+
+                            <div class="flexbox">
+                                <!-- checkbox with ARIA -->
+                                <input type="checkbox" id="check" role="checkbox" aria-required="true"
+                                    aria-checked="false" required />
+                                <label for="check">Check Me (required)</label>
+                            </div>
+
+                            <input type="submit" value="Submit" />
+                        </form>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-logo" role="banner">
+                <!-- alt attributes for footer logo , with ARIA-->
+                <a href="" aria-label="Homepage - Dreamla">
+                    <img src="/assets/images/footer-logo.png" alt="Dreamla Black Footer Logo" />
+                </a>
+            </div>
+
+            <div class="footer-social-links">
+                <!-- used Anchor links for social medias -->
+                <!-- I replaced the <i> with <em> because the accessibility checker flagged it and suggested to use <em> than <i> -->
+                <!-- So what I understand is, this elements has a purpose that's why it needs to be <em> as for emphasis. -->
+                <a href="https://www.facebook.com" target="_blank">
+                    <em class="fa fa-facebook" aria-hidden="true"></em><span>Facebook</span>
+                </a>
+                <a href="https://www.twitter.com" target="_blank">
+                    <em class="fa fa-twitter" aria-hidden="true"></em><span>Twitter</span>
+                </a>
+                <a href="https://www.instagram.com" target="_blank">
+                    <em class="fa fa-instagram" aria-hidden="true"></em><span>Instagram</span>
+                </a>
+                <a href="https://www.youtube.com" target="_blank">
+                    <em class="fa fa-youtube-play" aria-hidden="true"></em><span>YouTube</span>
+                </a>
+                <a href="https://www.pinterest.com" target="_blank">
+                    <em class="fa fa-pinterest" aria-hidden="true"></em><span>Pinterest</span>
+                </a>
+            </div>
+
+            <!-- with font awesome copyright icon, with ARIA -->
+            <div id="footer-copyright">
+                <em class="far fa-copyright" aria-hidden="true"></em> 2021 Dreamla - All Rights Reserved.
+            </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>
